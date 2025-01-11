@@ -74,4 +74,5 @@ TEMPLATES ={
                 "django.contrib.auth.context_processors.auth",
             ]
 
+        },
         }
