@@ -8,12 +8,29 @@ DATABASES = {"default": django_mongodb_backend.parse_uri(os.environ.get("MONGODB
 DEBUG = True
 DEFAULT_AUTO_FIELD = "django_mongodb_backend.fields.ObjectIdAutoField"
 INSTALLED_APPS = [
-    "{{ project_name }}.mongo_apps.MongoAuthConfig",
-    "{{ project_name }}.mongo_apps.MongoContentTypesConfig",
+    "{{ project_name }}.mongo_apps.MongoWagtailFormsAppConfig",
+    "{{ project_name }}.mongo_apps.MongoWagtailRedirectsAppConfig",
+    "{{ project_name }}.mongo_apps.MongoWagtailEmbedsAppConfig",
+    "wagtail.sites",
+    "{{ project_name }}.mongo_apps.MongoWagtailUsersAppConfig",
+    "wagtail.snippets",
+    "{{ project_name }}.mongo_apps.MongoWagtailDocsAppConfig",
+    "{{ project_name }}.mongo_apps.MongoWagtailImagesAppConfig",
+    "{{ project_name }}.mongo_apps.MongoWagtailSearchAppConfig",
+    "{{ project_name }}.mongo_apps.MongoWagtailAdminAppConfig",
+    "{{ project_name }}.mongo_apps.MongoWagtailAppConfig",
+    "modelcluster",
+    "{{ project_name }}.mongo_apps.MongoTaggitAppConfig",
+    '{{ project_name }}.mongo_apps.MongoAdminConfig',
+    '{{ project_name }}.mongo_apps.MongoAuthConfig',
+    '{{ project_name }}.mongo_apps.MongoContentTypesConfig',
+    "django.contrib.sessions",
+    "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_extensions",
     "webpack_boilerplate",
 ]
+
 MIGRATION_MODULES = {
     "admin": "mongo_migrations.admin",
     "auth": "mongo_migrations.auth",
