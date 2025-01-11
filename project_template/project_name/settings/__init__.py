@@ -67,3 +67,11 @@ TEMPLATES = [
 ALLOWED_HOSTS = ["*"]
 
 STATIC_URL = "static/"
+
+TEMPLATES ={
+        "OPTIONS": {
+            "context_processors": [
+                "django.contrib.auth.context_processors.auth",
+            ]
+
+        }
