@@ -46,7 +46,7 @@
             <div class="app-header">
                 <div class="container py-4 app-navbar">
                     <nav class="navbar navbar-transparent navbar-padded navbar-expand-md">
-                        <a class="navbar-brand me-auto" href="/">{{ current_site.site_name|default:"Project Makefile" }}</a>
+                        <a class="navbar-brand me-auto" href="/">{{ current_site.site_name|default:"Django MongoDB" }}</a>
                         <button class="navbar-toggler"
                                 type="button"
                                 data-bs-toggle="offcanvas"
@@ -121,7 +121,7 @@
             </div>
         </main>
         <footer class="footer mt-auto py-3 bg-body-tertiary pt-5 text-center text-small">
-            <p class="mb-1">&copy; {% now "Y" %} {{ current_site.site_name|default:"Project Makefile" }}</p>
+            <p class="mb-1">&copy; {% now "Y" %} {{ current_site.site_name|default:"Django MongoDB" }}</p>
             <ul class="list-inline">                              
                 <li class="list-inline-item">                   
                     <a class="text-secondary text-decoration-none {% if request.path == '/' %}active{% endif %}"
@@ -142,7 +142,7 @@
             <div class="offcanvas-header">
                 <a class="offcanvas-title text-light h5 text-decoration-none"
                    id="offcanvasExampleLabel"
-                   href="/">{{ current_site.site_name|default:"Project Makefile" }}</a>
+                   href="/">{{ current_site.site_name|default:"Django MongoDB" }}</a>
                 <button type="button"
                         class="btn-close bg-light"
                         data-bs-dismiss="offcanvas"
