@@ -29,7 +29,7 @@
                         <a id="polls-nav"
                            class="nav-link {% if request.path == '/polls' %}active{% endif %}"
                            aria-current="page"
-                           href="/">Polls</a>
+                           href="/polls">Polls</a>
                     </li>
                     {% for child in current_site.root_page.get_children %}
                         {% if child.show_in_menus %}
