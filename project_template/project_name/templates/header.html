@@ -18,8 +18,8 @@
                            class="nav-link {% if request.path == '/' %}active{% endif %}"
                            aria-current="page"
                            href="/">Home</a>
-                        <a target="_blank" href="/django">Django</a>
-                        <a target="_blank" href="/wagtail">Wagtail</a>
+                        <a class="nav-link" target="_blank" href="/django">Django</a>
+                        <a class="nav-link" target="_blank" href="/wagtail">Wagtail</a>
                     </li>
                     {% for child in current_site.root_page.get_children %}
                         {% if child.show_in_menus %}
