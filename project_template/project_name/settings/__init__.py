@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
     "webpack_boilerplate",
+    "polls",
 ]
 
 MIGRATION_MODULES = {
