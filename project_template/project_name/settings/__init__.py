@@ -96,3 +96,5 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
+
+WAGTAIL_SITE_NAME = "{{ project_name }}"
