@@ -53,6 +53,8 @@
   "dependencies": {
     "@babel/preset-react": "^7.26.3",
     "bootstrap": "^5.3.3",
-    "core-js": "^3.37.0"
+    "core-js": "^3.37.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
