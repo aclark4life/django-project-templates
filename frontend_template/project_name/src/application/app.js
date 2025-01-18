@@ -10,7 +10,7 @@ import UserContextProvider from '../context';  // eslint-disable-line
 import * as components from '../components';
 import "../styles/index.scss";
 
-const { ErrorBoundary } = components;
+const { ErrorBoundary } = components; // eslint-disable-line
 const dataComponents = getDataComponents(components);
 const container = document.getElementById('app');
 const root = createRoot(container);
@@ -19,6 +19,6 @@ const App = () => (
       <UserContextProvider>
         {dataComponents}
       </UserContextProvider>
-    </ErrorBoundary>                                                                                                                      
+    </ErrorBoundary>
 );     
 root.render(<App />);
