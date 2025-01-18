@@ -96,6 +96,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 WAGTAIL_SITE_NAME = "{{ project_name }}"
