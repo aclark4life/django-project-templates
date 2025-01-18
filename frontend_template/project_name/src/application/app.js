@@ -6,7 +6,7 @@ import 'bootstrap';
 // import '@fortawesome/fontawesome-free/js/regular';
 // import '@fortawesome/fontawesome-free/js/brands';
 import getDataComponents from '../dataComponents';
-import UserContextProvider from '../context';
+import UserContextProvider from '../context';  // eslint-disable-line
 import * as components from '../components';
 import "../styles/index.scss";
 
