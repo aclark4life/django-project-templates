@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "webpack_boilerplate",
     "polls",
+    "debug_toolbar",
 ]
 
 MIGRATION_MODULES = {
