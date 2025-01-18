@@ -20,5 +20,5 @@ const App = () => (
         {dataComponents}
       </UserContextProvider>
     </ErrorBoundary>
-);     
+);  // eslint-disable-line
 root.render(<App />);
