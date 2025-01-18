@@ -14,11 +14,12 @@ const { ErrorBoundary } = components; // eslint-disable-line
 const dataComponents = getDataComponents(components);
 const container = document.getElementById('app');
 const root = createRoot(container);
+// eslint-disable-next-line
 const App = () => (
     <ErrorBoundary>
       <UserContextProvider>
         {dataComponents}
       </UserContextProvider>
     </ErrorBoundary>
-);  // eslint-disable-line
+);
 root.render(<App />);
