@@ -1,4 +1,4 @@
-import React from 'react';
+import 'react';
 import { createRoot } from 'react-dom/client';
 import 'bootstrap';
 // import '@fortawesome/fontawesome-free/js/fontawesome';
@@ -9,7 +9,6 @@ import getDataComponents from '../dataComponents';
 import UserContextProvider from '../context';
 import * as components from '../components';
 import "../styles/index.scss";
-import "../styles/theme-blue.scss";
 import "./config";
 
 const { ErrorBoundary } = components;
