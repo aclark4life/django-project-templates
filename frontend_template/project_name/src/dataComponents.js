@@ -1,5 +1,5 @@
 // Via pwellever
-import React from 'react';
+import 'react';
 import { createPortal } from 'react-dom';
 
 const parseProps = data => Object.entries(data).reduce((result, [key, value]) => {
