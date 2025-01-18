@@ -9,7 +9,6 @@ import getDataComponents from '../dataComponents';
 import UserContextProvider from '../context';
 import * as components from '../components';
 import "../styles/index.scss";
-import "./config";
 
 const { ErrorBoundary } = components;
 const dataComponents = getDataComponents(components);
