@@ -101,3 +101,7 @@ MIDDLEWARE = [
 ]
 
 WAGTAIL_SITE_NAME = "{{ project_name }}"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
