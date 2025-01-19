@@ -19,7 +19,7 @@ elif POSTGRES_URI:
 else:
     raise ValueError("Neither MONGODB_URI nor POSTGRES_URI is set in the environment variables.")
 
-DATABASES = {"default": 
+DATABASES = {"default": settings_dict}
 DEBUG = True
 DEFAULT_AUTO_FIELD = "django_mongodb_backend.fields.ObjectIdAutoField"
 INSTALLED_APPS = [
