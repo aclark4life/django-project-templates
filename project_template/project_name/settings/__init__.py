@@ -19,49 +19,81 @@ else:
 
 DATABASES = {"default": settings_dict}
 DEBUG = True
-DEFAULT_AUTO_FIELD = "django_mongodb_backend.fields.ObjectIdAutoField"
-INSTALLED_APPS = [
-    "{{ project_name }}.mongo_apps.MongoWagtailFormsAppConfig",
-    "{{ project_name }}.mongo_apps.MongoWagtailRedirectsAppConfig",
-    "{{ project_name }}.mongo_apps.MongoWagtailEmbedsAppConfig",
-    "wagtail.sites",
-    "{{ project_name }}.mongo_apps.MongoWagtailUsersAppConfig",
-    "wagtail.snippets",
-    "{{ project_name }}.mongo_apps.MongoWagtailDocsAppConfig",
-    "{{ project_name }}.mongo_apps.MongoWagtailImagesAppConfig",
-    "{{ project_name }}.mongo_apps.MongoWagtailSearchAppConfig",
-    "{{ project_name }}.mongo_apps.MongoWagtailAdminAppConfig",
-    "{{ project_name }}.mongo_apps.MongoWagtailAppConfig",
-    "modelcluster",
-    "{{ project_name }}.mongo_apps.MongoTaggitAppConfig",
-    '{{ project_name }}.mongo_apps.MongoAdminConfig',
-    '{{ project_name }}.mongo_apps.MongoAuthConfig',
-    '{{ project_name }}.mongo_apps.MongoContentTypesConfig',
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "django_extensions",
-    "webpack_boilerplate",
-    "polls",
-    "debug_toolbar",
-    "home",
-]
 
-MIGRATION_MODULES = {
-    "admin": "mongo_migrations.admin",
-    "auth": "mongo_migrations.auth",
-    "contenttypes": "mongo_migrations.contenttypes",
-    "taggit": "mongo_migrations.taggit",
-    "wagtaildocs": "mongo_migrations.wagtaildocs",
-    "wagtailredirects": "mongo_migrations.wagtailredirects",
-    "wagtailimages": "mongo_migrations.wagtailimages",
-    "wagtailsearch": "mongo_migrations.wagtailsearch",
-    "wagtailadmin": "mongo_migrations.wagtailadmin",
-    "wagtailcore": "mongo_migrations.wagtailcore",
-    "wagtailforms": "mongo_migrations.wagtailforms",
-    "wagtailembeds": "mongo_migrations.wagtailembeds",
-    "wagtailusers": "mongo_migrations.wagtailusers",
-}
+if settings_dict["ENGINE"] == "django_mongodb_backend":
+    DEFAULT_AUTO_FIELD = "django_mongodb_backend.fields.ObjectIdAutoField"
+    INSTALLED_APPS = [
+        "{{ project_name }}.mongo_apps.MongoWagtailFormsAppConfig",
+        "{{ project_name }}.mongo_apps.MongoWagtailRedirectsAppConfig",
+        "{{ project_name }}.mongo_apps.MongoWagtailEmbedsAppConfig",
+        "wagtail.sites",
+        "{{ project_name }}.mongo_apps.MongoWagtailUsersAppConfig",
+        "wagtail.snippets",
+        "{{ project_name }}.mongo_apps.MongoWagtailDocsAppConfig",
+        "{{ project_name }}.mongo_apps.MongoWagtailImagesAppConfig",
+        "{{ project_name }}.mongo_apps.MongoWagtailSearchAppConfig",
+        "{{ project_name }}.mongo_apps.MongoWagtailAdminAppConfig",
+        "{{ project_name }}.mongo_apps.MongoWagtailAppConfig",
+        "modelcluster",
+        "{{ project_name }}.mongo_apps.MongoTaggitAppConfig",
+        '{{ project_name }}.mongo_apps.MongoAdminConfig',
+        '{{ project_name }}.mongo_apps.MongoAuthConfig',
+        '{{ project_name }}.mongo_apps.MongoContentTypesConfig',
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+        "django_extensions",
+        "webpack_boilerplate",
+        "polls",
+        "debug_toolbar",
+        "home",
+    ]
+
+    MIGRATION_MODULES = {
+        "admin": "mongo_migrations.admin",
+        "auth": "mongo_migrations.auth",
+        "contenttypes": "mongo_migrations.contenttypes",
+        "taggit": "mongo_migrations.taggit",
+        "wagtaildocs": "mongo_migrations.wagtaildocs",
+        "wagtailredirects": "mongo_migrations.wagtailredirects",
+        "wagtailimages": "mongo_migrations.wagtailimages",
+        "wagtailsearch": "mongo_migrations.wagtailsearch",
+        "wagtailadmin": "mongo_migrations.wagtailadmin",
+        "wagtailcore": "mongo_migrations.wagtailcore",
+        "wagtailforms": "mongo_migrations.wagtailforms",
+        "wagtailembeds": "mongo_migrations.wagtailembeds",
+        "wagtailusers": "mongo_migrations.wagtailusers",
+    }
+
+elif settings_dict["ENGINE"] == "django.db.backends.postgresql":
+    INSTALLED_APPS = [
+        "home",
+        "search",
+        "wagtail.contrib.forms",
+        "wagtail.contrib.redirects",
+        "wagtail.embeds",
+        "wagtail.sites",
+        "wagtail.users",
+        "wagtail.snippets",
+        "wagtail.documents",
+        "wagtail.images",
+        "wagtail.search",
+        "wagtail.admin",
+        "wagtail",
+        "modelcluster",
+        "taggit",
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+        "django_extensions",
+        "webpack_boilerplate",
+        "polls",
+        "debug_toolbar",
+    ]
+
 ROOT_URLCONF = "{{ project_name }}.urls"
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "frontend", "build")]
