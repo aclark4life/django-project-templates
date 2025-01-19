@@ -4,7 +4,19 @@ import os
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
-DATABASES = {"default": django_mongodb_backend.parse_uri(os.environ.get("MONGODB_URI"))}
+# Check environment variables
+MONGODB_URI = os.getenv("MONGODB_URI")
+POSTGRES_URI = os.getenv("POSTGRES_URI")
+
+# Determine which URI to use
+if MONGODB_URI:
+    DATABASE_URL = MONGODB_URI
+elif POSTGRES_URI:
+    DATABASE_URL = POSTGRES_URI
+else:
+    raise ValueError("Neither MONGODB_URI nor POSTGRES_URI is set in the environment variables.")
+
+DATABASES = {"default": django_mongodb_backend.parse_uri(os.environ.get("DATABASE_URL"))}
 DEBUG = True
 DEFAULT_AUTO_FIELD = "django_mongodb_backend.fields.ObjectIdAutoField"
 INSTALLED_APPS = [
