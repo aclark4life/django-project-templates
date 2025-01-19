@@ -11,11 +11,9 @@ POSTGRES_URI = os.getenv("POSTGRES_URI")
 
 # Determine which URI to use
 if MONGODB_URI:
-    DATABASE_URL = MONGODB_URI
-    settings_dict = django_mongodb_backend.parse_uri(os.environ.get("DATABASE_URL"))
+    settings_dict = django_mongodb_backend.parse_uri(MONGODB_URI)
 elif POSTGRES_URI:
-    DATABASE_URL = POSTGRES_URI
-    settings_dict = dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    settings_dict = dj_database_url.parse(POSTGRES_URI)
 else:
     raise ValueError("Neither MONGODB_URI nor POSTGRES_URI is set in the environment variables.")
 
