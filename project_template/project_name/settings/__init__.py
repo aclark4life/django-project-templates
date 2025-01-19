@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     "webpack_boilerplate",
     "polls",
     "debug_toolbar",
+    "home",
 ]
 
 MIGRATION_MODULES = {
