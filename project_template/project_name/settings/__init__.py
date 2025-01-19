@@ -68,7 +68,6 @@ if settings_dict["ENGINE"] == "django_mongodb_backend":
 elif settings_dict["ENGINE"] == "django.db.backends.postgresql":
     INSTALLED_APPS = [
         "home",
-        "search",
         "wagtail.contrib.forms",
         "wagtail.contrib.redirects",
         "wagtail.embeds",
