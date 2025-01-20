@@ -41,7 +41,7 @@ def create_homepage(apps, schema_editor):
     if locale:
         homepage_attrs["locale"] = locale
 
-    homepage = HomePage.objects.create(homepage_attrs)
+    homepage = HomePage.objects.create(**homepage_attrs)
 
     # Create a site with the new homepage set as the root
     Site.objects.create(hostname="localhost", root_page=homepage, is_default_site=True)
