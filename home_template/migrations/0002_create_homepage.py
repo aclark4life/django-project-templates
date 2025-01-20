@@ -10,7 +10,6 @@ def create_homepage(apps, schema_editor):
     Page = apps.get_model("wagtailcore.Page")
     Site = apps.get_model("wagtailcore.Site")
     HomePage = apps.get_model("home.HomePage")
-    Locale = apps.get_model("wagtailcore.Locale")
 
     # Delete the default homepage
     # If migration is run multiple times, it may have already been deleted
@@ -24,6 +23,7 @@ def create_homepage(apps, schema_editor):
     # Why this is needed in MongoDB and not in PostgreSQL?
     locale = None
     if settings.DATABASES["default"]["ENGINE"] == "django_mongodb_backend":
+        Locale = apps.get_model("wagtailcore.Locale")
         locale = Locale.objects.get(language_code="en")
 
     # Create a new homepage
