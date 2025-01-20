@@ -1,5 +1,8 @@
 from django.db import migrations
 
+# Do not use settings in migrations under normal circumstances.
+from django.conf import settings
+
 
 def create_homepage(apps, schema_editor):
     # Get models
@@ -18,20 +21,27 @@ def create_homepage(apps, schema_editor):
         model="homepage", app_label="home"
     )
 
-    # Create a new homepage
-    locale = Locale.objects.get(language_code="en")
+    # Why this is needed in MongoDB and not in PostgreSQL?
+    locale = None
+    if settings.DATABASES["default"]["ENGINE"] == "django_mongodb_backend":
+        locale = Locale.objects.get(language_code="en")
 
-    homepage = HomePage.objects.create(
-        title="Home",
-        draft_title="Home",
-        slug="home",
-        content_type=homepage_content_type,
-        path="00010001",
-        depth=2,
-        numchild=0,
-        url_path="/home/",
-        locale=locale,
-    )
+    # Create a new homepage
+    homepage_attrs = {
+        "title": "Home",
+        "draft_title": "Home",
+        "slug": "home",
+        "content_type": homepage_content_type,
+        "path": "00010001",
+        "depth": 2,
+        "numchild": 0,
+        "url_path": "/home/",
+    }
+    # Add the locale only if it's defined
+    if locale:
+        homepage_attrs["locale"] = locale
+
+    homepage = HomePage.objects.create(homepage_attrs)
 
     # Create a site with the new homepage set as the root
     Site.objects.create(hostname="localhost", root_page=homepage, is_default_site=True)
