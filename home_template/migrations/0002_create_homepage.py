@@ -80,6 +80,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(create_locale, remove_locale),
+        migrations.RunPython(create_locale, remove_locale) if settings.DATABASES["default"]["ENGINE"] == "django_mongodb_backend"
         migrations.RunPython(create_homepage, remove_homepage),
     ]
