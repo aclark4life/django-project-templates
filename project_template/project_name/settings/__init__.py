@@ -45,6 +45,7 @@ if settings_dict["ENGINE"] == "django_mongodb_backend":
         "polls",
         "debug_toolbar",
         "home",
+        "tutorial",
     ]
 
     MIGRATION_MODULES = {
