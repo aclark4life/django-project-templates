@@ -33,7 +33,7 @@ def create_homepage(apps, schema_editor):
         "slug": "home",
         "content_type": homepage_content_type,
         "path": "00010001",
-        "depth": 2,
+        "depth": 1,
         "numchild": 0,
         "url_path": "/home/",
     }
