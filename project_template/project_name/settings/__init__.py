@@ -15,7 +15,7 @@ if MONGODB_URI:
 elif POSTGRES_URI:
     settings_dict = dj_database_url.parse(POSTGRES_URI)
 else:
-    raise ValueError("Neither MONGODB_URI nor POSTGRES_URI is set in the environment variables.")
+    settings_dict = dj_database_url.parse("mongodb://localhost:27017/{{ project_name }}")
 
 
 if settings_dict["ENGINE"] == "django_mongodb_backend":
