@@ -15,7 +15,7 @@ if MONGODB_URI:
 elif POSTGRES_URI:
     settings_dict = dj_database_url.parse(POSTGRES_URI)
 else:
-    settings_dict = dj_database_url.parse("mongodb://localhost:27017/{{ project_name }}")
+    settings_dict = django_mongodb_backend.parse_uri("mongodb://localhost:27017/{{ project_name }}")
 
 
 if settings_dict["ENGINE"] == "django_mongodb_backend":
