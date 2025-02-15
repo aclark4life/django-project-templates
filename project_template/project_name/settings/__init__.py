@@ -42,10 +42,8 @@ if settings_dict["ENGINE"] == "django_mongodb_backend":
         "django.contrib.staticfiles",
         "django_extensions",
         "webpack_boilerplate",
-        "polls",
         "debug_toolbar",
         "home",
-        "tutorial",
     ]
 
     MIGRATION_MODULES = {
@@ -88,7 +86,6 @@ elif settings_dict["ENGINE"] == "django.db.backends.postgresql":
         "django.contrib.staticfiles",
         "django_extensions",
         "webpack_boilerplate",
-        "polls",
         "debug_toolbar",
     ]
 else:
