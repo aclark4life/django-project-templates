@@ -7,6 +7,5 @@ from .views import BaseView
 urlpatterns = [
     path("admin/django/", admin.site.urls),
     path("admin/wagtail/", include("wagtail.admin.urls")),
-    path("polls/", include("polls.urls")),
     path("", BaseView.as_view(), name="base")
 ] + debug_toolbar_urls()
