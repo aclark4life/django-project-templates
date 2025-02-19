@@ -104,13 +104,6 @@ WEBPACK_LOADER = {
 
 SECRET_KEY = "{{ secret_key }}"
 
-TEMPLATES = [
-    {
-        "APP_DIRS": True,
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join("{{ project_name }}", "templates")],
-    },
-]
 
 ALLOWED_HOSTS = ["*"]
 
@@ -119,9 +112,10 @@ STATIC_URL = "static/"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [
-            os.path.join(PROJECT_DIR, "templates"),
-        ],
+        # "DIRS": [
+        #     os.path.join(PROJECT_DIR, "templates"),
+        # ],
+        "DIRS": [os.path.join("{{ project_name }}", "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
