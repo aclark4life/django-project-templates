@@ -2,6 +2,8 @@ import django_mongodb_backend
 import dj_database_url
 import os
 
+from bson import ObjectId
+
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
