@@ -145,3 +145,5 @@ WAGTAIL_SITE_NAME = "{{ project_name }}"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+SITE_ID = ObjectId("000000000000000000000001")
